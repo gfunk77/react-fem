@@ -1,7 +1,8 @@
-import { searchUser } from './api';
-
 function App() {
-  searchUser('octocat');
-  return <div>App</div>;
+  return (
+    <main className="main light-theme">
+      <div className="container">My App</div>
+    </main>
+  );
 }
 export default App;

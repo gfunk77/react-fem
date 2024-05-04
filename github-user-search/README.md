@@ -11,7 +11,7 @@
 
 ## Overview
 
-This is a solution to the [$$$ component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
+This is a solution to the [Github User Search App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
 
 ### The challenge
 
