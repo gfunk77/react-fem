@@ -31,7 +31,7 @@ Desktop
 
 ### Links
 
-- Solution URL: [Github](https://github.com/gfunk77/react-fem/advice-generator)
+- Solution URL: [Github](https://github.com/gfunk77/react-fem/tree/main/advice-generator)
 - Live Site URL: [Netlify](https://gfunk77-advice-generator.netlify.app/)
 
 ### Built with
