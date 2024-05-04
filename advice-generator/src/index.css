@@ -1,0 +1,23 @@
+:root {
+  --family: 'Manrope', sans-serif;
+  --primary-color: hsl(193, 38%, 86%);
+  --accent-color: hsl(150, 100%, 66%);
+  --line-color: hsl(217, 19%, 38%);
+  --card-background: hsl(217, 19%, 24%);
+  --main-background: hsl(218, 23%, 16%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  --shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
+  --radius: 15px;
+  --transition: 0.3s;
+  --max-width: 540px;
+  --quote-size: 28px;
+}
+
+body {
+  font-family: var(--family);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
