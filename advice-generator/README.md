@@ -24,10 +24,13 @@ Users should be able to:
 ### Screenshot
 
 Mobile
-![]($$$)
+![](./public/solutions/Mobile.png)
 
 Desktop
-![]($$$)
+![](./public/solutions/Desktop.png)
+
+Desktop Active
+![](./public/solutions/Desktop-active.png)
 
 ### Links
 
