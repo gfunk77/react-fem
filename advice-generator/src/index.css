@@ -1,18 +1,14 @@
 :root {
   --family: 'Manrope', sans-serif;
   --primary-color: hsl(193, 38%, 86%);
-  --accent-color: hsl(150, 100%, 66%);
-  --line-color: hsl(217, 19%, 38%);
+  --accent-color: #52ffa8;
   --card-background: hsl(217, 19%, 24%);
   --main-background: hsl(218, 23%, 16%);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
 
   --shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.1);
   --radius: 15px;
-  --transition: 0.3s;
+  --transition: all 0.3s ease;
   --max-width: 540px;
-  --quote-size: 28px;
 }
 
 *,
@@ -40,6 +36,7 @@ main {
 }
 
 .card {
+  position: relative;
   width: 90%;
   max-width: var(--max-width);
   margin-inline: auto;
@@ -55,10 +52,53 @@ main {
   text-transform: uppercase;
   font-size: 0.685rem;
   letter-spacing: 3.457px;
+  transition: var(--transition);
 }
 
 .text {
   margin: 1.5rem 0;
   font-size: 1.5rem;
   letter-spacing: -0.257px;
+  transition: var(--transition);
+}
+
+.pattern {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  transition: var(--transition);
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 10px var(--accent-color);
+}
+
+@media (min-width: 598px) {
+  .text {
+    margin: 1.5rem 0 2.5rem;
+    font-size: 1.75rem;
+    letter-spacing: 0.3px;
+  }
+
+  .number {
+    font-size: 0.8125rem;
+    letter-spacing: 4.086px;
+  }
+
+  .pattern {
+    margin-bottom: 2.5rem;
+  }
 }

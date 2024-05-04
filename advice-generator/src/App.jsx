@@ -24,7 +24,7 @@ function App() {
 
   return (
     <main>
-      <Card isDesktop={isDesktop} advice={advice} />
+      <Card moreAdvice={getAdvice} isDesktop={isDesktop} advice={advice} />
     </main>
   );
 }
