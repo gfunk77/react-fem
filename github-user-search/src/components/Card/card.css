@@ -17,8 +17,13 @@
   column-gap: 19px;
 }
 
+.card-header {
+  margin-bottom: 34px;
+}
+
 .card-body {
   grid-column: 1 / 3;
+  /* Check margin-top when actual pic comes through */
 }
 
 .info {
@@ -52,11 +57,65 @@
 @media (min-width: 598px) {
   .card {
     padding: 40px;
+    column-gap: 41px;
   }
+
+  .card-header {
+    margin-bottom: unset;
+    align-self: center;
+  }
+
+  .username {
+    font-size: 26px;
+  }
+
+  .handle {
+    font-size: 16px;
+  }
+
+  .joined {
+    font-size: 15px;
+  }
+
+  .card-body {
+    margin-top: 24px;
+  }
+
+  .card-desc {
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  /* img 117px */
 }
 
 @media (min-width: 992px) {
   .card {
     padding: 48px;
+    grid-template-columns: 117px 1fr;
+  }
+
+  .img-container {
+    grid-row: span 2;
+  }
+
+  .card-header,
+  .card-body {
+    grid-column: 2;
+  }
+
+  .card-body {
+    margin-top: unset;
+  }
+
+  .card-header {
+    align-self: self-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .joined {
+    margin: 8px 0;
   }
 }
