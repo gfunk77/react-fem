@@ -1,0 +1,35 @@
+.header,
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  margin-bottom: 2.25rem;
+}
+
+.title {
+  font-size: 1.625rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--light-theme-text-dark);
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.icon {
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  gap: 1rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: var(--light-theme-text-dark);
+}

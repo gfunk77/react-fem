@@ -1,10 +1,19 @@
 :root {
+  --font-family: 'Space Mono', monospace;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
   --light-theme-blue: #0079ff;
   --light-theme-dark-bg: #f6f8ff;
   --light-theme-light-bg: #fefefe;
   --light-theme-text-primary: #4b6a9b;
-  --light-theme-text-dark: #4b6a9b;
+  --light-theme-text-dark: #2b3442;
   --light-theme-text-secondary: #697c9a;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
 }
 
 *,
@@ -29,6 +38,18 @@ main.light-theme {
 
 .container {
   width: 90%;
-  max-width: 730px;
+  max-width: 327px;
   margin-inline: auto;
+}
+
+@media (min-width: 598px) {
+  .container {
+    max-width: 573px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
 }

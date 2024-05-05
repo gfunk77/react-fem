@@ -1,7 +1,10 @@
+import { Header } from './components/index';
 function App() {
   return (
     <main className="main light-theme">
-      <div className="container">My App</div>
+      <div className="container">
+        <Header />
+      </div>
     </main>
   );
 }
