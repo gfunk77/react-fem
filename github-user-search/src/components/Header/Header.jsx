@@ -1,5 +1,5 @@
 import { IoMoon, IoSunnySharp } from 'react-icons/io5';
-import useHeaderStyles from '../hooks/useHeaderStyles';
+import useHeaderStyles from '../../hooks/useHeaderStyles';
 import './header.css';
 
 function Header({ changeTheme, theme }) {
