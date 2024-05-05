@@ -1,11 +1,8 @@
 import { Header } from './components/index';
-import { useState } from 'react';
-function App() {
-  const [theme, setTheme] = useState('light');
+import usePreferredTheme from './hooks/usePreferredTheme';
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+function App() {
+  const [theme, toggleTheme] = usePreferredTheme();
 
   return (
     <main className={`main ${theme}`}>
