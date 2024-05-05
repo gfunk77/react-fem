@@ -6,30 +6,34 @@
 }
 
 .header {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.3rem;
 }
 
 .title {
-  font-size: 1.625rem;
+  font-size: 1.7333rem;
   font-weight: var(--font-weight-bold);
-  color: var(--light-theme-text-dark);
 }
 
-.btn {
+.header-btn {
   border: none;
   background-color: transparent;
   color: inherit;
 }
 
 .icon {
-  font-size: 13px;
+  font-size: 0.866rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: 2.5px;
   text-transform: uppercase;
   gap: 1rem;
 }
 
-.icon:hover {
+.icon-light:hover {
   cursor: pointer;
   color: var(--light-theme-text-dark);
+}
+
+.icon-dark:hover {
+  cursor: pointer;
+  color: var(--dark-theme-text-hover);
 }
