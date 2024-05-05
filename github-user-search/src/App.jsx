@@ -1,4 +1,4 @@
-import { Header, Search } from './components/index';
+import { Header, Search, Card } from './components/index';
 import usePreferredTheme from './hooks/usePreferredTheme';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <div className="container">
         <Header theme={theme} changeTheme={toggleTheme} />
         <Search theme={theme} />
+        <Card theme={theme} />
       </div>
     </main>
   );

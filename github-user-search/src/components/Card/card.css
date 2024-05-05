@@ -1,0 +1,26 @@
+.card.dark {
+  background-color: var(--dark-theme-light-bg);
+  box-shadow: unset;
+}
+
+.card.light {
+  background-color: var(--light-theme-light-bg);
+}
+
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+@media (min-width: 598px) {
+  .card {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    padding: 48px;
+  }
+}
