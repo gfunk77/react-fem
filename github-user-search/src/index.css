@@ -17,6 +17,7 @@
   --btn-hover: #60abff;
 
   --radius: 15px;
+  --shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 html {
@@ -58,6 +59,7 @@ main.dark {
   width: 90%;
   max-width: 327px;
   margin-inline: auto;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 598px) {

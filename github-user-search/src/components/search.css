@@ -14,6 +14,7 @@ input {
 
 input.dark {
   background-color: var(--dark-theme-light-bg);
+  caret-color: var(--dark-theme-text-hover);
 }
 
 input.dark::placeholder {
@@ -25,7 +26,8 @@ input.light::placeholder {
 }
 
 input:focus {
-  outline: var(--blue) auto 1px;
+  outline: none;
+  border: 2px solid var(--blue);
 }
 
 .search-icon,
@@ -60,4 +62,25 @@ input:focus {
   width: 20px;
   height: 20px;
   color: var(--blue);
+}
+
+@media (min-width: 598px) {
+  input {
+    height: 69px;
+    font-size: 1.2rem;
+    padding-left: 5.333rem;
+  }
+
+  .search-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 32px;
+    margin-right: 24px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 0.833em 1.6em;
+  }
 }
