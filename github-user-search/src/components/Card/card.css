@@ -11,6 +11,42 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 24px;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 19px;
+}
+
+.card-body {
+  grid-column: 1 / 3;
+}
+
+.info {
+  margin-bottom: 6px;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.username {
+  color: var(--light-theme-text-dark);
+  font-size: 16px;
+}
+
+.handle {
+  color: var(--blue);
+  font-size: 13px;
+}
+
+.joined {
+  color: var(--light-theme-text-secondary);
+  font-size: 13px;
+}
+
+.card-desc {
+  font-size: 13px;
+  line-height: 25px;
 }
 
 @media (min-width: 598px) {
