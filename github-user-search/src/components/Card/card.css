@@ -54,6 +54,29 @@
 .card-desc {
   font-size: 13px;
   line-height: 25px;
+  margin-bottom: 23px;
+}
+
+.stats {
+  background-color: var(--light-theme-dark-bg);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 8px;
+  place-items: center;
+}
+
+.stats p:nth-child(-n + 3) {
+  font-size: 11px;
+}
+
+.stats p:nth-last-child(-n + 3) {
+  font-size: 16px;
+  font-weight: var(--font-weight-bold);
+  color: var(--light-theme-text-dark);
 }
 
 @media (min-width: 598px) {
@@ -91,6 +114,14 @@
   .card-desc {
     font-size: 15px;
     line-height: 30px;
+  }
+
+  .stats p:nth-child(-n + 3) {
+    font-size: 13px;
+  }
+
+  .stats p:nth-last-child(-n + 3) {
+    font-size: 22px;
   }
 }
 
