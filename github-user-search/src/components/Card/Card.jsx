@@ -1,22 +1,28 @@
 import './card.css';
 
-function Card({ theme }) {
+function Card({ theme, user }) {
+  console.log(user);
+
+  const convertDate = (date) => {
+    const d = new Date(date);
+    return `Joined ${d.toUTCString().split(' ').slice(1, 4).join(' ')}`;
+  };
+
   return (
     <article className={`card ${theme}`}>
       <div className="img-container">
-        <img className="img" src="https://picsum.photos/70" alt="" />
+        <img className="img" src={user.avatar_url} />
       </div>
       <header className="card-header">
         <div className="info">
-          <h2 className="username">The Octocat</h2>
-          <p className="handle">@octocat</p>
+          <h2 className="username">{user.name}</h2>
+          <p className="handle">{`@${user.login}`}</p>
         </div>
-        <p className="joined">Joined 25 Jan 2011</p>
+        <p className="joined">{convertDate(user.created_at)}</p>
       </header>
       <div className="card-body">
         <p className="card-desc">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
-          mattis eros.
+          {user.bio || 'This is a mysterious individual without a biography. Use your imagination!'}
         </p>
       </div>
     </article>
