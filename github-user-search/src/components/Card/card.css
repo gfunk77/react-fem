@@ -3,6 +3,10 @@
   box-shadow: unset;
 }
 
+.stats.dark {
+  background-color: var(--dark-theme-dark-bg);
+}
+
 .card.light {
   background-color: var(--light-theme-light-bg);
 }
@@ -77,6 +81,11 @@
   font-size: 16px;
   font-weight: var(--font-weight-bold);
   color: var(--light-theme-text-dark);
+}
+
+.stats.dark p:nth-last-child(-n + 3),
+.username.dark {
+  color: var(--dark-theme-text-primary);
 }
 
 @media (min-width: 598px) {
