@@ -28,6 +28,18 @@
   color: #bababa;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
+}
+
 @media (min-width: 598px) {
   .footer {
     margin: 2rem 0 0;

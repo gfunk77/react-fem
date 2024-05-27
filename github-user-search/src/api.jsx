@@ -6,5 +6,6 @@ export const searchUser = async (username) => {
     return response.data;
   } catch (error) {
     console.error('Error searching user:', error);
+    throw error;
   }
 };

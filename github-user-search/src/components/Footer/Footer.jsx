@@ -21,7 +21,13 @@ function Footer({ user }) {
       {userInfo.map(({ icon: Icon, property, default: defaultValue }, index) => (
         <div key={index} className={getPColor(property)}>
           <Icon />
-          <p>{user[property] || defaultValue}</p>
+          {Icon === IoLinkSharp && user[property] ? (
+            <p>
+              <a href={user[property]}>{user[property]}</a>
+            </p>
+          ) : (
+            <p>{user[property] || defaultValue}</p>
+          )}
         </div>
       ))}
     </div>

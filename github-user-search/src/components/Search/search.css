@@ -16,11 +16,13 @@ input {
 input.dark {
   background-color: var(--dark-theme-light-bg);
   caret-color: var(--dark-theme-text-hover);
+  color: var(--dark-theme-text-primary);
 }
 
 input.light {
   background-color: var(--light-theme-light-bg);
   caret-color: var(--dark-theme-text-hover);
+  color: var(--light-theme-text-primary);
 }
 
 input.dark::placeholder {
@@ -29,6 +31,12 @@ input.dark::placeholder {
 
 input.light::placeholder {
   color: var(--light-theme-text-primary);
+}
+
+input.no-results::placeholder {
+  color: var(--error);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
 }
 
 input:focus {
@@ -79,6 +87,11 @@ input:focus {
     height: 69px;
     font-size: 1.2rem;
     padding-left: 5.333rem;
+  }
+
+  input.no-results::placeholder {
+    text-align: right;
+    padding-right: 10rem;
   }
 
   .search-icon {
