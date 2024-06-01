@@ -1,5 +1,5 @@
 import './card.css';
-import Footer from '../Footer/Footer';
+import { Footer } from '../index';
 
 function Card({ theme, user }) {
   const convertDate = (date) => {
