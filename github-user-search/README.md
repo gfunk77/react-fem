@@ -39,7 +39,7 @@ Desktop Dark
 ### Links
 
 - Solution URL: [Github](https://github.com/gfunk77/tree/main/github-user-search)
-- Live Site URL: [Netlify]($$$)
+- Live Site URL: [Netlify](https://gfunk77-github-user-search.netlify.app)
 
 ### Built with
 
