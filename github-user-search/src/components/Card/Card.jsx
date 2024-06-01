@@ -1,5 +1,5 @@
 import './card.css';
-import { Footer } from '../index';
+import { Footer, CardBody, CardHeader } from '../index';
 
 function Card({ theme, user }) {
   const convertDate = (date) => {
@@ -12,25 +12,9 @@ function Card({ theme, user }) {
       <div className="img-container">
         <img className="img" src={user.avatar_url} />
       </div>
-      <header className="card-header">
-        <div className="info">
-          <h2 className={`username ${theme}`}>{user.name}</h2>
-          <p className="handle">{`@${user.login}`}</p>
-        </div>
-        <p className="joined">{convertDate(user.created_at)}</p>
-      </header>
+      <CardHeader user={user} theme={theme} convertDate={convertDate} />
       <div className="card-body">
-        <p className="card-desc">
-          {user.bio || 'This is a mysterious individual without a biography. Use your imagination!'}
-        </p>
-        <div className={`stats ${theme}`}>
-          <p>Repos</p>
-          <p>Followers</p>
-          <p>Following</p>
-          <p>{user.public_repos}</p>
-          <p>{user.followers}</p>
-          <p>{user.following}</p>
-        </div>
+        <CardBody user={user} theme={theme} />
         <Footer user={user} />
       </div>
     </article>
