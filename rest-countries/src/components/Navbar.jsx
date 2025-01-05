@@ -1,31 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
 import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
+import useThemeToggle from '../hooks/useThemeToggle';
 
 export function Logo({ children }) {
   return <h1 className="font-extrabold flex-1 text-sm md:text-2xl">{children}</h1>;
 }
 
-function getInitialTheme() {
-  const storedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  return storedTheme === 'dark' || prefersDark;
-}
-
 export function ThemeToggle() {
-  const inputRef = useRef(null);
-  const [isDark, setIsDark] = useState(getInitialTheme());
-
-  useEffect(() => {
-    const themeController = inputRef.current;
-    if (themeController) {
-      themeController.checked = isDark;
-      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-  }, [isDark]);
-
-  const handleChange = () => setIsDark(inputRef.current.checked);
+  const { isDark, inputRef, handleChange } = useThemeToggle();
 
   return (
     <div className="flex items-center space-x-2">
