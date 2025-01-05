@@ -1,4 +1,11 @@
+import Navbar, { Logo, ThemeToggle } from './components/Navbar';
+
 function App() {
-  return <div>App Works!</div>;
+  return (
+    <Navbar>
+      <Logo>Where in the world?</Logo>
+      <ThemeToggle />
+    </Navbar>
+  );
 }
 export default App;
