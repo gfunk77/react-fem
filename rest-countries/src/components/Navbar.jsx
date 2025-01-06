@@ -32,10 +32,6 @@ export function ThemeToggle() {
 }
 
 function Navbar({ children }) {
-  return (
-    <header className="navbar shadow-md h-20 px-4">
-      <div className="container mx-auto flex items-center justify-between">{children}</div>
-    </header>
-  );
+  return <header className="navbar shadow-md h-20 px-4 md:px-20 transition-all">{children}</header>;
 }
 export default Navbar;
