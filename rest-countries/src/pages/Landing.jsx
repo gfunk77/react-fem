@@ -13,7 +13,7 @@ function Landing() {
       {placeholders.map((placeholder) => (
         <div
           key={placeholder}
-          className="h-52 bg-[dodgerblue] w-full min-w-[240px] justify-self-center flex items-center justify-center">
+          className="h-[336px] w-full max-w-[264px] bg-[dodgerblue]  justify-self-center flex items-center justify-center">
           {placeholder}
         </div>
       ))}
