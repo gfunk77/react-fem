@@ -1,21 +1,31 @@
-import Dropdown from './components/Dropdown';
-import Navbar, { Logo, ThemeToggle } from './components/Navbar';
-import Search from './components/Search';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import BaseLayout from './pages/BaseLayout';
+import Landing from './pages/Landing';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <BaseLayout />,
+    errorElement: <div>Not Found</div>,
+    children: [
+      {
+        errorElement: <div>Not Found</div>,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/countries" replace />,
+          },
+          {
+            path: 'countries',
+            element: <Landing />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <>
-      <Navbar>
-        <Logo>Where in the world?</Logo>
-        <ThemeToggle />
-      </Navbar>
-      {/* <div className="mx-auto mt-6 px-4 md:container:px-0 "> */}
-      <div className="px-4 md:px-20 mt-6 transition-all">
-        <Search />
-        <br />
-        <Dropdown />
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;
