@@ -6,17 +6,21 @@ function Landing() {
 
   return (
     <>
-      <div className="sm:col-span-full flex flex-col gap-10 sm:flex-row  sm:justify-between transition-all">
+      <div className="sm:col-span-full flex flex-col gap-10 sm:flex-row  sm:justify-between">
         <Search />
         <Dropdown />
       </div>
-      {placeholders.map((placeholder) => (
-        <div
-          key={placeholder}
-          className="h-[336px] w-full max-w-[264px] bg-[dodgerblue]  justify-self-center flex items-center justify-center">
-          {placeholder}
-        </div>
-      ))}
+      <div
+        className="grid xl:gap-x-10 lg:gap-x-16 md:gap-x-52 sm:gap-x-20 gap-x-16 gap-y-12 mt-8 place-content-center"
+        style={{
+          gridTemplateColumns: 'repeat(auto-fit, minmax(264px, 264px))',
+        }}>
+        {placeholders.map((placeholder) => (
+          <div key={placeholder} className="bg-[dodgerblue]">
+            {placeholder}
+          </div>
+        ))}
+      </div>
     </>
   );
 }
