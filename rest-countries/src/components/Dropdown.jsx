@@ -1,7 +1,7 @@
 import { IoChevronDown } from 'react-icons/io5';
 import { useState, useRef } from 'react';
 
-function Dropdown() {
+function Dropdown({ onSelectedRegion }) {
   const [selected, setSelected] = useState('Filter by Region');
   const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   const dropdownMenuRef = useRef(null);
@@ -14,6 +14,7 @@ function Dropdown() {
 
   function handleSelect(region) {
     setSelected(region);
+    onSelectedRegion(region);
     if (dropdownMenuRef.current) {
       dropdownMenuRef.current.classList.add('hidden');
     }

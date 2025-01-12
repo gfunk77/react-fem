@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import BaseLayout from './pages/BaseLayout';
-import Landing from './pages/Landing';
+import Landing, { loader as landingLoader } from './pages/Landing';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
           {
             path: 'countries',
             element: <Landing />,
+            loader: landingLoader,
           },
         ],
       },

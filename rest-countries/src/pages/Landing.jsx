@@ -1,26 +1,44 @@
 import Search from '../components/Search';
 import Dropdown from '../components/Dropdown';
+import CountriesList from '../components/CountriesList';
+import axios from 'axios';
+import { useLoaderData } from 'react-router-dom';
+import { useState } from 'react';
+
+const baseUrl = 'https://restcountries.com/v3.1';
+const codes = ['deu', 'usa', 'bra', 'isl', 'afg', 'ala', 'alb', 'dza'];
+const codesQuery = `/alpha?codes=${codes.join(',')}`;
+
+export const loader = async () => {
+  const response = await axios.get(baseUrl + codesQuery);
+  console.log(baseUrl + codesQuery);
+  const countries = response.data;
+  const sortedCountries = codes.map((code) =>
+    countries.find((country) => country.cca3.toLowerCase() === code)
+  );
+  return { countries: sortedCountries };
+};
 
 function Landing() {
-  const placeholders = Array.from({ length: 8 }, (_, i) => 'Hello ' + (i + 1));
+  const { countries } = useLoaderData();
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+
+  const handleSelectedRegion = async (region) => {
+    if (region === 'Filter by Region') {
+      setFilteredCountries(countries);
+    } else {
+      const response = await axios.get(`${baseUrl}/region/${region}`);
+      setFilteredCountries(response.data);
+    }
+  };
 
   return (
     <>
       <div className="sm:col-span-full flex flex-col gap-10 sm:flex-row  sm:justify-between">
         <Search />
-        <Dropdown />
+        <Dropdown onSelectedRegion={handleSelectedRegion} />
       </div>
-      <div
-        className="grid xl:gap-x-10 lg:gap-x-16 md:gap-x-52 sm:gap-x-20 gap-x-16 gap-y-12 mt-8 place-content-center"
-        style={{
-          gridTemplateColumns: 'repeat(auto-fit, minmax(264px, 264px))',
-        }}>
-        {placeholders.map((placeholder) => (
-          <div key={placeholder} className="bg-[dodgerblue]">
-            {placeholder}
-          </div>
-        ))}
-      </div>
+      <CountriesList countries={filteredCountries} />
     </>
   );
 }
