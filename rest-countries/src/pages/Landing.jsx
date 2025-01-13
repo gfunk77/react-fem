@@ -16,9 +16,21 @@ export const loader = async ({ request }) => {
   let countries;
   if (q) {
     const response = await axios.get(`${baseUrl}/name/${q}`);
+    if (!response) {
+      throw new Response('', {
+        status: 404,
+        statusText: 'Not Found',
+      });
+    }
     countries = response.data;
   } else {
     const response = await axios.get(baseUrl + codesQuery);
+    if (!response) {
+      throw new Response('', {
+        status: 404,
+        statusText: 'Not Found',
+      });
+    }
     const fetchedCountries = response.data;
 
     countries = codes.map((code) =>

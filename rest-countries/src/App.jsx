@@ -20,18 +20,13 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        errorElement: <Error />,
-        children: [
-          {
-            index: true,
-            element: <Navigate to="/countries" replace />,
-          },
-          {
-            path: 'countries',
-            element: <Landing />,
-            loader: landingLoader,
-          },
-        ],
+        index: true,
+        element: <Navigate to="/countries" replace />,
+      },
+      {
+        path: 'countries',
+        element: <Landing />,
+        loader: landingLoader,
       },
     ],
   },

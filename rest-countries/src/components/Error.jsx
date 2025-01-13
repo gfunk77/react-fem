@@ -1,11 +1,11 @@
 import earth from '../assets/earth.svg';
 import { useRouteError, Link } from 'react-router-dom';
-import BaseLayout from '../pages/BaseLayout';
 import { IoArrowBack } from 'react-icons/io5';
+import BaseLayout from '../pages/BaseLayout';
 
 function Error() {
   const error = useRouteError();
-  console.log(error);
+
   return (
     <>
       <BaseLayout />
@@ -21,7 +21,7 @@ function Error() {
           {error.status} {error.statusText}
         </h1>
         <img src={earth} alt="earth" className="w-3/4" />
-        <p>{error.error.message}</p>
+        <p>{error.message}</p>
       </div>
     </>
   );
