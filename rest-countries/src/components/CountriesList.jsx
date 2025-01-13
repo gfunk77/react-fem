@@ -3,7 +3,7 @@ import { Country } from './Country';
 function CountriesList({ countries }) {
   return (
     <div
-      className="grid gap-10 my-8 md:my-12 place-content-center md:place-content-between"
+      className="grid gap-10 my-8 md:my-12 place-content-center md:place-content-between transition-all"
       style={{
         gridTemplateColumns: 'repeat(auto-fit, minmax(264px, 264px))',
       }}>

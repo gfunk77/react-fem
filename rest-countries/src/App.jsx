@@ -1,15 +1,16 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import BaseLayout from './pages/BaseLayout';
 import Landing, { loader as landingLoader } from './pages/Landing';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <BaseLayout />,
-    errorElement: <div>Not Found</div>,
+    errorElement: <Error />,
     children: [
       {
-        errorElement: <div>Not Found</div>,
+        errorElement: <Error />,
         children: [
           {
             index: true,
