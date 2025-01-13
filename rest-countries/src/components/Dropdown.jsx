@@ -25,7 +25,7 @@ function Dropdown({ onSelectedRegion }) {
       <div
         tabIndex={0}
         role="button"
-        className="input flex items-center justify-between text-xs leading-5 font-normal border-none rounded shadow-md w-52 px-6 md:text-sm md:h-14"
+        className="input flex items-center justify-between text-xs leading-5 font-normal border-none rounded shadow-md w-52 px-6 sm:text-sm sm:h-14"
         onClick={toggleMenu}>
         {selected}
         <IoChevronDown />

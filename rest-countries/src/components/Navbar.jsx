@@ -2,7 +2,7 @@ import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
 import useThemeToggle from '../hooks/useThemeToggle';
 
 export function Logo({ children }) {
-  return <h1 className="font-extrabold flex-1 text-sm md:text-2xl">{children}</h1>;
+  return <h1 className="font-extrabold flex-1 text-sm sm:text-2xl">{children}</h1>;
 }
 
 export function ThemeToggle() {
@@ -10,7 +10,7 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center space-x-2">
-      <button className="flex items-center md:text-xl" aria-label="Toggle dark mode">
+      <button className="flex items-center sm:text-xl" aria-label="Toggle dark mode">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
           <input
@@ -24,7 +24,7 @@ export function ThemeToggle() {
           <IoMoonOutline className="swap-off" aria-hidden="true" />
         </label>
       </button>
-      <span className="font-semibold text-xs md:text-base leading-4">
+      <span className="font-semibold text-xs sm:text-base leading-4">
         {isDark ? 'Light Mode' : 'Dark Mode'}
       </span>
     </div>

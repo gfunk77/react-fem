@@ -8,7 +8,7 @@ function BaseLayout() {
         <Logo>Where in the world?</Logo>
         <ThemeToggle />
       </Navbar>
-      <div className="container mx-auto px-4 lg:px-12 mt-6 md:mt-12">
+      <div className="container mx-auto px-4 lg:px-12 mt-6 sm:mt-12">
         <Outlet />
       </div>
     </>

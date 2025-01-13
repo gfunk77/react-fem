@@ -47,7 +47,7 @@ function Landing() {
 
   return (
     <>
-      <div className="sm:col-span-full flex flex-col gap-10 sm:flex-row  sm:justify-between">
+      <div className="sm:col-span-full flex flex-col sm:justify-between gap-10 sm:flex-row  ">
         <Search q={q} />
         <Dropdown onSelectedRegion={handleSelectedRegion} />
       </div>

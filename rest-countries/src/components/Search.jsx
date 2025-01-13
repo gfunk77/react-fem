@@ -29,9 +29,9 @@ function Search({ q }) {
   };
 
   return (
-    <Form>
-      <label className="input flex items-center gap-6 sm:w-1/2 md:w-[480px] text-xs leading-5 font-normal border-none rounded shadow-md pl-8 md:text-sm md:h-14">
-        <IoSearch className="text-base text-[#c4c4c4] font-semibold md:text-lg" />
+    <Form className="sm:w-1/2">
+      <label className="input flex items-center gap-6 text-xs leading-5 font-normal border-none rounded shadow-md pl-8 sm:text-sm sm:h-14">
+        <IoSearch className="text-base text-[#c4c4c4] font-semibold sm:text-lg" />
         <input
           type="search"
           id="search"
