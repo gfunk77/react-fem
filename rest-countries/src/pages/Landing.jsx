@@ -4,6 +4,7 @@ import CountriesList from '../components/CountriesList';
 import axios from 'axios';
 import { useLoaderData } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 
 const baseUrl = 'https://restcountries.com/v3.1';
 const codes = ['deu', 'usa', 'bra', 'isl', 'afg', 'ala', 'alb', 'dza'];
@@ -31,17 +32,27 @@ export const loader = async ({ request }) => {
 function Landing() {
   const { countries, q } = useLoaderData();
   const [filteredCountries, setFilteredCountries] = useState(countries);
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     setFilteredCountries(countries);
   }, [countries]);
 
+  const getRegionCountries = async (region) => {
+    const response = await axios.get(`${baseUrl}/region/${region}`);
+    return response.data;
+  };
+
   const handleSelectedRegion = async (region) => {
     if (region === 'Filter by Region') {
       setFilteredCountries(countries);
     } else {
-      const response = await axios.get(`${baseUrl}/region/${region}`);
-      setFilteredCountries(response.data);
+      const data = await queryClient.fetchQuery({
+        queryKey: ['regionCountries', region],
+        queryFn: () => getRegionCountries(region),
+      });
+
+      setFilteredCountries(data);
     }
   };
 
