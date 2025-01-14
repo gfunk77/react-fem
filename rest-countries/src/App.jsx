@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: 'countries',
         element: <Landing />,
-        loader: landingLoader,
+        loader: landingLoader(queryClient),
       },
     ],
   },

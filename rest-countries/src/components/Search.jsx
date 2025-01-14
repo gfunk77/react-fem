@@ -1,48 +1,36 @@
 import { IoSearch } from 'react-icons/io5';
-import { Form, useSubmit } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
-function Search({ q }) {
-  const [query, setQuery] = useState(q || '');
-  const debounceTimeout = useRef(null);
-  const submit = useSubmit();
+function Search({ onSearch }) {
+  const inputRef = useRef(null);
 
-  useEffect(() => {
-    setQuery(q || '');
-  }, [q]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const value = inputRef.current.value;
+    if (!value) return;
+    onSearch(value);
+  };
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-
-    if (debounceTimeout.current) {
-      clearTimeout(debounceTimeout.current);
-    }
-
-    debounceTimeout.current = setTimeout(() => {
-      if (value.trim === '') {
-        submit({ search: '' });
-      } else {
-        submit({ search: value });
-      }
-    }, 500);
+  const handleChange = () => {
+    const value = inputRef.current.value;
+    if (!value) onSearch('');
   };
 
   return (
-    <Form className="sm:w-1/2">
+    <form onSubmit={handleSubmit} className="sm:w-1/2">
       <label className="input flex items-center gap-6 text-xs leading-5 font-normal border-none rounded shadow-md pl-8 sm:text-sm sm:h-14">
         <IoSearch className="text-base text-[#c4c4c4] font-semibold sm:text-lg" />
         <input
+          ref={inputRef}
           type="search"
           id="search"
           name="search"
-          value={query}
           className="grow"
           placeholder="Search for a country..."
           onChange={handleChange}
         />
       </label>
-    </Form>
+    </form>
   );
 }
 export default Search;

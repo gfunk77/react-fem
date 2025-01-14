@@ -5,7 +5,6 @@ import BaseLayout from '../pages/BaseLayout';
 
 function Error() {
   const error = useRouteError();
-
   return (
     <>
       <BaseLayout />
@@ -17,9 +16,7 @@ function Error() {
       </Link>
 
       <div className="h-full flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-2xl">
-          {error.status} {error.statusText}
-        </h1>
+        <h1 className="text-2xl">{error.status}</h1>
         <img src={earth} alt="earth" className="w-3/4" />
         <p>{error.message}</p>
       </div>
