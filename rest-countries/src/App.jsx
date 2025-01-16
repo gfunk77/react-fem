@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import BaseLayout from './pages/BaseLayout';
 import Landing, { loader as landingLoader } from './pages/Landing';
+import { action as searchAction } from './components/Search';
 import Error from './components/Error';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         path: 'countries',
         element: <Landing />,
         loader: landingLoader(queryClient),
+        action: searchAction,
       },
     ],
   },

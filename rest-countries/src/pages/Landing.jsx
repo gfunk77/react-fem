@@ -101,20 +101,10 @@ function Landing() {
     }
   };
 
-  const handleSearch = async (searchTerm) => {
-    if (!searchTerm) {
-      setFilteredCountries(countries);
-      setSearchParams({});
-      return;
-    } else {
-      setSearchParams({ search: searchTerm });
-    }
-  };
-
   return (
     <>
       <div className="sm:col-span-full flex flex-col sm:justify-between gap-10 sm:flex-row  ">
-        <Search onSearch={handleSearch} />
+        <Search />
         <Dropdown onSelectedRegion={handleSelectedRegion} />
       </div>
       <CountriesList countries={filteredCountries} />

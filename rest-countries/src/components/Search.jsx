@@ -1,23 +1,31 @@
 import { IoSearch } from 'react-icons/io5';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { Form, useNavigate, useSearchParams } from 'react-router-dom';
 
-function Search({ onSearch }) {
+export const action = async ({ request }) => {
+  const url = new URL(request.url);
+  const search = url.searchParams.get('search');
+
+  return { search };
+};
+
+function Search() {
   const inputRef = useRef(null);
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const value = inputRef.current.value;
-    if (!value) return;
-    onSearch(value);
-  };
+  useEffect(() => {
+    const search = searchParams.get('search');
+    if (search) inputRef.current.value = search;
+  }, [searchParams]);
 
   const handleChange = () => {
     const value = inputRef.current.value;
-    if (!value) onSearch('');
+    if (!value) navigate('/countries');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="sm:w-1/2">
+    <Form className="sm:w-1/2">
       <label className="input flex items-center gap-6 text-xs leading-5 font-normal border-none rounded shadow-md pl-8 sm:text-sm sm:h-14">
         <IoSearch className="text-base text-[#c4c4c4] font-semibold sm:text-lg" />
         <input
@@ -30,7 +38,7 @@ function Search({ onSearch }) {
           onChange={handleChange}
         />
       </label>
-    </form>
+    </Form>
   );
 }
 export default Search;
