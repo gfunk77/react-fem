@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Country({ country }) {
   const {
     name: { common: name },
@@ -5,9 +7,10 @@ export function Country({ country }) {
     capital,
     population,
     region,
+    cca3,
   } = country;
   return (
-    <div key={name} className="card bg-base-100 shadow-xl rounded">
+    <Link to={`/countries/${cca3}`} key={name} className="card bg-base-100 shadow-xl rounded">
       <figure>
         <img src={svg} alt={name} className="h-[160px] w-full object-cover" />
       </figure>
@@ -17,6 +20,6 @@ export function Country({ country }) {
         <p>Population: {population}</p>
         <p>Capital: {capital}</p>
       </div>
-    </div>
+    </Link>
   );
 }
