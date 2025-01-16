@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import BaseLayout from './pages/BaseLayout';
 import Landing, { loader as landingLoader } from './pages/Landing';
-import { action as searchAction } from './components/Search';
 import Error from './components/Error';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -13,6 +12,17 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+const action = async ({ request }) => {
+  const url = new URL(request.url);
+  const search = url.searchParams.get('search');
+  const region = url.searchParams.get('region');
+
+  if (search) return { search };
+  if (region) return { region };
+
+  return {};
+};
 
 const router = createBrowserRouter([
   {
@@ -28,7 +38,7 @@ const router = createBrowserRouter([
         path: 'countries',
         element: <Landing />,
         loader: landingLoader(queryClient),
-        action: searchAction,
+        action: action,
       },
     ],
   },

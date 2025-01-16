@@ -2,21 +2,13 @@ import { IoSearch } from 'react-icons/io5';
 import { useEffect, useRef } from 'react';
 import { Form, useNavigate, useSearchParams } from 'react-router-dom';
 
-export const action = async ({ request }) => {
-  const url = new URL(request.url);
-  const search = url.searchParams.get('search');
-
-  return { search };
-};
-
 function Search() {
   const inputRef = useRef(null);
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    const search = searchParams.get('search');
-    if (search) inputRef.current.value = search;
+    inputRef.current.value = searchParams.get('search') || '';
   }, [searchParams]);
 
   const handleChange = () => {
