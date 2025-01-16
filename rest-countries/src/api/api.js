@@ -4,6 +4,16 @@ const baseUrl = 'https://restcountries.com/v3.1';
 const codes = ['deu', 'usa', 'bra', 'isl', 'afg', 'ala', 'alb', 'dza'];
 const codesQuery = `/alpha?codes=${codes.join(',')}`;
 
+export const getCountryDetail = (id) => {
+  return {
+    queryKey: ['country', id],
+    queryFn: async () => {
+      const { data } = await axios.get(`${baseUrl}/alpha/${id}`);
+      return data[0];
+    },
+  };
+};
+
 export const getInitialData = async () => {
   try {
     const response = await axios.get(baseUrl + codesQuery);
