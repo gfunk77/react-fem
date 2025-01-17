@@ -1,5 +1,5 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import { getCountryDetail } from '../api/api';
+import { getCountryDetail, getBorderCountries } from '../api/api';
 import { useQuery } from '@tanstack/react-query';
 import { IoArrowBack } from 'react-icons/io5';
 
@@ -22,6 +22,9 @@ function CountryDetail() {
 
   const languages = Object.values(data.languages).join(', ');
   const currencies = Object.keys(data.currencies).join(', ');
+
+  const { data: borderCountries } = useQuery(getBorderCountries(data?.borders));
+  console.log(borderCountries);
 
   return (
     <>
@@ -65,20 +68,21 @@ function CountryDetail() {
           </div>
           <p className="text-base mb-4">Border Countries: </p>
           <ul className="flex flex-wrap gap-[10px]">
-            {data.borders
-              ? data.borders.map((border) => {
+            {borderCountries
+              ? borderCountries.map((border) => {
                   return (
-                    <li key={border}>
+                    <li key={border.cca3}>
                       <button
                         className="btn btn-sm px-[30px] rounded-sm text-xs font-light"
-                        onClick={() => handleBorderClick(border)}>
-                        {border}
+                        onClick={() => handleBorderClick(border.cca3)}>
+                        {border.name.common}
                       </button>
                     </li>
                   );
                 })
               : 'None'}
           </ul>
+          ;
         </div>
       </div>
     </>

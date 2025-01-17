@@ -50,3 +50,13 @@ export const getRegion = async (region) => {
     throw new Error(`Region ${region} not found`);
   }
 };
+
+export const getBorderCountries = (borders) => {
+  return {
+    queryKey: ['borders', borders],
+    queryFn: async () => {
+      const { data } = await axios.get(`${baseUrl}/alpha?codes=${borders.join(',')}`);
+      return data;
+    },
+  };
+};
