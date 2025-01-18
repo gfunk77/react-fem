@@ -16,13 +16,12 @@ export const loader =
 function CountryDetail() {
   const { id } = useLoaderData();
   const { data } = useQuery(getCountryDetail(id));
+  const { data: borderCountries } = useQuery(getBorderCountries(data?.borders));
   const navigate = useNavigate();
 
   const handleBorderClick = (border) => {
     navigate(`/countries/${border}`);
   };
-
-  const { data: borderCountries } = useQuery(getBorderCountries(data?.borders));
 
   return (
     <>

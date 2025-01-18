@@ -1,7 +1,6 @@
 import { Search, CountriesList, Dropdown } from '../components';
 import { getInitialData, getRegion, getSearch } from '../api/api';
 import { useLoaderData } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 export const loader =
   (queryClient) =>
@@ -10,29 +9,18 @@ export const loader =
     const search = url.searchParams.get('search');
     const region = url.searchParams.get('region');
 
-    const queryKey = search
-      ? ['searchCountries', search]
-      : region
-      ? ['regionCountries', region]
-      : ['initialData'];
-    const queryFn = search
+    const getQueryFn = search
       ? () => getSearch(search)
       : region
       ? () => getRegion(region)
       : () => getInitialData();
 
-    const data = await queryClient.ensureQueryData({ queryKey, queryFn });
-
+    const data = await queryClient.ensureQueryData(getQueryFn());
     return { countries: data };
   };
 
 function Landing() {
   const { countries } = useLoaderData();
-  const [filteredCountries, setFilteredCountries] = useState(countries);
-
-  useEffect(() => {
-    setFilteredCountries(countries);
-  }, [countries]);
 
   return (
     <>
@@ -40,7 +28,7 @@ function Landing() {
         <Search />
         <Dropdown />
       </div>
-      <CountriesList countries={filteredCountries} />
+      <CountriesList countries={countries} />
     </>
   );
 }
