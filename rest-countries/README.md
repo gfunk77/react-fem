@@ -6,14 +6,18 @@ This is a solution to the [REST Countries API challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
+    - [Mobile](#mobile)
+    - [Details Mobile](#details-mobile)
+    - [Tablet](#tablet)
+    - [Details Tablet](#details-tablet)
+    - [Desktop](#desktop)
+    - [Details Desktop](#details-desktop)
   - [Links](#links)
   - [Built with](#built-with)
 - [Author](#author)
 
 ## Overview
-
-### The challenge
 
 Users should be able to:
 
@@ -24,18 +28,44 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
+#### Mobile
+
+![](./screenshots/Mobile.png)
+
+#### Details Mobile
+
+![](./screenshots/Details-Mobile.png)
+
+#### Tablet
+
+![](./screenshots/Tablet.png)
+
+#### Details Tablet
+
+![](./screenshots/Details-Tablet.png)
+
+#### Desktop
+
+![](./screenshots/Desktop.png)
+
+#### Details Desktop
+
+![](./screenshots/Details-Desktop.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/gfunk77/react-fem/tree/main/rest-countries)
+- Live Site URL: [Netlify](https://gfunk77-rest-countries.netlify.app/)
 
 ### Built with
 
 - [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [React Query](https://tanstack.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [Daisyui](https://daisyui.com/)
 
 ## Author
 

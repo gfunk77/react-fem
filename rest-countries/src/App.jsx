@@ -4,7 +4,7 @@ import Landing, { loader as landingLoader } from './pages/Landing';
 import CountryDetail, { loader as detailLoader } from './pages/CountryDetail';
 import Error from './components/Error';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -55,7 +55,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   );
