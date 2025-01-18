@@ -33,7 +33,7 @@ export function ThemeToggle() {
 
 function Navbar({ children }) {
   return (
-    <header className="navbar shadow-md">
+    <header className="navbar bg-primary shadow-md">
       <div className="container mx-auto px-4 lg:px-12">{children}</div>
     </header>
   );

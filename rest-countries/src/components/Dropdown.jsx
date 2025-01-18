@@ -34,7 +34,7 @@ function Dropdown() {
         <div
           tabIndex={0}
           role="button"
-          className="input flex items-center justify-between text-xs leading-5 font-normal border-none rounded shadow-md w-52 px-6 sm:text-sm sm:h-14"
+          className="input bg-primary flex items-center justify-between text-xs leading-5 font-normal border-none rounded shadow-md w-52 px-6 sm:text-sm sm:h-14"
           onClick={toggleMenu}>
           {selected}
           <IoChevronDown />
@@ -42,8 +42,8 @@ function Dropdown() {
         <ul
           ref={dropdownMenuRef}
           tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded
-         z-[1] w-full max-w-52 p-2 shadow hidden">
+          className="dropdown-content menu bg-primary rounded
+         z-[1] w-full max-w-52 mt-2 p-2 shadow hidden">
           {regions.map((region) => (
             <li key={region}>
               <a onClick={() => handleSelect(region)}>{region}</a>

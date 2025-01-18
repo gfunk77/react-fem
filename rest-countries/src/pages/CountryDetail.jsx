@@ -23,11 +23,10 @@ function CountryDetail() {
   };
 
   const { data: borderCountries } = useQuery(getBorderCountries(data?.borders));
-  console.log(borderCountries);
 
   return (
     <>
-      <button className="btn btn-sm mb-16 rounded-sm" onClick={() => navigate(-1)}>
+      <button className="btn btn-sm bg-primary mb-16 rounded-sm" onClick={() => navigate(-1)}>
         <IoArrowBack />
         Back
       </button>

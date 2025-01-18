@@ -4,7 +4,7 @@ function getInitialTheme() {
   const storedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  return storedTheme === 'dark' || prefersDark;
+  return storedTheme === 'darkTheme' || prefersDark;
 }
 
 function useThemeToggle() {
@@ -15,8 +15,8 @@ function useThemeToggle() {
     const themeController = inputRef.current;
     if (themeController) {
       themeController.checked = isDark;
-      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', isDark ? 'darkTheme' : 'lightTheme');
+      localStorage.setItem('theme', isDark ? 'darkTheme' : 'lightTheme');
     }
   }, [isDark]);
 

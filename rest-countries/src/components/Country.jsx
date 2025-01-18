@@ -10,7 +10,10 @@ function Country({ country }) {
     cca3,
   } = country;
   return (
-    <Link to={`/countries/${cca3}`} key={name} className="card bg-base-100 shadow-xl rounded">
+    <Link
+      to={`/countries/${cca3}`}
+      key={name}
+      className="card bg-base-100 shadow-xl rounded transition-transform hover:scale-110">
       <figure>
         <img src={svg} alt={name} className="h-[160px] w-full object-cover" />
       </figure>

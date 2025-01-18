@@ -18,8 +18,10 @@ function Search() {
 
   return (
     <Form className="sm:w-1/2">
-      <label className="input flex items-center gap-6 text-xs leading-5 font-normal border-none rounded shadow-md pl-8 sm:text-sm sm:h-14">
-        <IoSearch className="text-base text-[#c4c4c4] font-semibold sm:text-lg" />
+      <label className="input bg-primary flex items-center gap-6 text-xs leading-5 font-normal border-none rounded shadow-md pl-8 sm:text-sm sm:h-14">
+        <button type="submit" className="text-base font-semibold sm:text-lg">
+          <IoSearch />
+        </button>
         <input
           ref={inputRef}
           type="search"

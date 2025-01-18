@@ -10,4 +10,14 @@
     font-style: normal;
     font-display: swap;
   }
+  .grid-cols-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 264px));
+    gap: 2.5rem;
+    place-content: center;
+  }
+
+  .cal-height {
+    height: calc(100% - 64px);
+  }
 }
