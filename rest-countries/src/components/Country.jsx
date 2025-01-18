@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export function Country({ country }) {
+function Country({ country }) {
   const {
     name: { common: name },
     flags: { svg },
@@ -23,3 +23,5 @@ export function Country({ country }) {
     </Link>
   );
 }
+
+export default Country;

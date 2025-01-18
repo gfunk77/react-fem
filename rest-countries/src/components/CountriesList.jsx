@@ -1,4 +1,4 @@
-import { Country } from './Country';
+import Country from './Country';
 
 function CountriesList({ countries }) {
   return (

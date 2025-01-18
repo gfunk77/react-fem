@@ -1,6 +1,4 @@
-import Search from '../components/Search';
-import Dropdown from '../components/Dropdown';
-import CountriesList from '../components/CountriesList';
+import { Search, CountriesList, Dropdown } from '../components';
 import { getInitialData, getRegion, getSearch } from '../api/api';
 import { useLoaderData } from 'react-router-dom';
 import { useState, useEffect } from 'react';
