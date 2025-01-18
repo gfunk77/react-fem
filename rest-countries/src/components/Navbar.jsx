@@ -1,8 +1,13 @@
 import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
 import useThemeToggle from '../hooks/useThemeToggle';
+import { Link } from 'react-router-dom';
 
 export function Logo({ children }) {
-  return <h1 className="font-extrabold flex-1 text-sm sm:text-2xl">{children}</h1>;
+  return (
+    <Link to={'/countries'} className="font-extrabold flex-1 text-sm sm:text-2xl">
+      {children}
+    </Link>
+  );
 }
 
 export function ThemeToggle() {
