@@ -1,9 +1,13 @@
-function BorderCountry({ border, borderClick }) {
+import { useNavigate } from 'react-router-dom';
+
+function BorderCountry({ border }) {
+  const navigate = useNavigate();
+
   return (
     <li key={border.cca3}>
       <button
         className="btn btn-sm bg-primary px-[30px] rounded-sm text-xs font-light"
-        onClick={() => borderClick(border.cca3)}>
+        onClick={() => navigate(`/countries/${border.cca3}`)}>
         {border.name.common}
       </button>
     </li>

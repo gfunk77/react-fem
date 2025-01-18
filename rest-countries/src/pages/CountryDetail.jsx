@@ -1,5 +1,4 @@
 import { BorderCountries, Stats, Flag } from '../components';
-
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { getCountryDetail, getBorderCountries } from '../api/api';
 import { useQuery } from '@tanstack/react-query';
@@ -19,10 +18,6 @@ function CountryDetail() {
   const { data: borderCountries } = useQuery(getBorderCountries(data?.borders));
   const navigate = useNavigate();
 
-  const handleBorderClick = (border) => {
-    navigate(`/countries/${border}`);
-  };
-
   return (
     <>
       <button className="btn btn-sm bg-primary mb-16 rounded-sm" onClick={() => navigate(-1)}>
@@ -33,7 +28,7 @@ function CountryDetail() {
         <Flag flag={data.flags?.svg} text={data.flags?.alt} />
         <div>
           <Stats data={data} />
-          <BorderCountries borderCountries={borderCountries} borderClick={handleBorderClick} />
+          <BorderCountries borderCountries={borderCountries} />
         </div>
       </div>
     </>
