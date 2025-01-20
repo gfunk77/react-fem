@@ -1,0 +1,43 @@
+@use '../../mixin' as *;
+
+.card {
+  width: 90vw;
+  max-width: 1110px;
+  border-radius: $radius;
+  padding: 1.5rem;
+  background-color: white;
+
+  @include flex(column, $gap: 1.5rem);
+  @include position(60%);
+}
+
+.card-item {
+  color: $primary-clr;
+  text-align: center;
+}
+
+.category {
+  @include font(10px, normal, 1.458px, 700);
+  color: $secondary-clr;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.value {
+  @include font(20px, 24px, -0.179px);
+}
+
+@media (min-width: 600px) {
+  .card {
+    @include flex(row, space-between);
+    @include position(75%);
+    padding: 36px 32px;
+  }
+  .category {
+    @include font(12px, normal, 1.75px, 700);
+    margin-bottom: 13px;
+  }
+  .value {
+    @include font(26px, 30px, -0.232px);
+  }
+}

@@ -1,0 +1,26 @@
+$primary-clr: #2c2c2c;
+$secondary-clr: rgb(44, 44, 44, 0.5);
+$radius: 15px;
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin position($top: 0, $left: 50%, $right: 0, $transform: translateX(-50%)) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  transform: $transform;
+}
+
+@mixin font($size, $line-height, $letter-spacing, $weight: 500) {
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-weight: $weight;
+}

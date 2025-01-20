@@ -1,4 +1,5 @@
-import Arrow from './Arrow';
+import './input.scss';
+import Arrow from '../Arrow';
 
 function Input() {
   return (

@@ -1,6 +1,5 @@
-import Card from './components/Card';
-import Input from './components/Input';
-import Image from './components/Image';
+import './app.scss';
+import { Card, Input, Image } from './components';
 import { useState, useEffect } from 'react';
 
 function App() {
