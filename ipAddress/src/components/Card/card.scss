@@ -33,6 +33,25 @@
     @include position(75%);
     padding: 36px 32px;
   }
+
+  .card-item {
+    text-align: left;
+  }
+
+  .card-item:not(:first-child) {
+    position: relative;
+    padding-left: 32px;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px; // Adjust the width of the vertical line
+      background-color: #000; // Adjust the color of the vertical line
+      opacity: 0.15;
+    }
+  }
   .category {
     @include font(12px, normal, 1.75px, 700);
     margin-bottom: 13px;
